@@ -3,7 +3,7 @@
 Store the scraped CSV data from the Milestone 1 activity into Hive
 
 ## Instructions
-Please follow the instructions provided in `sources\Instructions`.
+Please follow the instructions provided in `sources\Instructions.txt`.
 
 ### Authors
 
