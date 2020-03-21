@@ -1,0 +1,48 @@
+MileStone 2: Store the scraped data from Milestone 1 into Hive
+--------------------------------------------------------------
+
+Tools:
+------
+1. Hadoop
+2. Derby
+3. Hive
+
+Environment:
+------------
+1. Windows 10
+
+Prerequisites:
+--------------
+1. For the hadoop installation on windows 10, please follow the instructions here:
+   https://muhammadbilalyar.github.io/blogs/How-to-install-Hadoop-on-Window-10/
+2. For the hive installation, please follow the instuctions here:
+   https://www.youtube.com/watch?v=npyRXkMhrgk
+
+Steps: 
+------
+1. First start Hadoop, go to the directory where hadoop is installed, and execute:
+
+   start-all.cmd
+
+2. Then start Derby, go to dir where derby is installed, and execute:
+
+   startNetworkServer -h 0.0.0.0
+
+3. Then start Hive, go to the directory where hive is installed, and execute:
+
+   hive
+
+4. When you see the 'hive>' prompt, enter the following command to create a table:
+
+   CREATE TABLE items (Description string, Url string, price double) row format delimited fields terminated by ',';
+
+5. After creating the table, enter the following command to load the CSV file that we have already scraped in Milestone 1:
+
+   LOAD DATA LOCAL INPATH 'input.csv' OVERWRITE INTO TABLE items;
+
+6. To verify the import into Hadoop, run the following command select and display the loaded data:
+
+   SELECT * FROM items;
+
+7. You should see an output showing the data as from the CSV.
+
